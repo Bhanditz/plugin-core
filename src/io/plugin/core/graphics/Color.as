@@ -23,6 +23,8 @@ package io.plugin.core.graphics
 		
 		private var _needsUpdate: Boolean;
 		
+		protected var _isDisposed: Boolean;
+		
 		public static function fromHexRGB( hexValue:uint ):Color
 		{
 			var r:int = (hexValue >> 16) & 0xff;
@@ -49,6 +51,8 @@ package io.plugin.core.graphics
 			_b = b;
 			_a = a;
 			
+			_isDisposed = false;
+			
 			update();
 		}
 		
@@ -59,7 +63,12 @@ package io.plugin.core.graphics
 		
 		public function dispose(): void
 		{
-			
+			_isDisposed = true;
+		}
+		
+		public function get isDisposed():Boolean
+		{
+			return _isDisposed;
 		}
 		
 		public function equals( o: Object ): Boolean

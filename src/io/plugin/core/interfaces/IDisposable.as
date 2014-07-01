@@ -19,7 +19,7 @@ package io.plugin.core.interfaces
 	public interface IDisposable
 	{
 		function dispose(): void;
-		// function get isDisposed(): Boolean; // TODO consider enforcing a disposed flag
+		function get isDisposed(): Boolean;
 	}
 	
 }

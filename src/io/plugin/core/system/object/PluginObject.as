@@ -1,17 +1,29 @@
 package io.plugin.core.system.object 
 {
+	import io.plugin.core.interfaces.IDisposable;
 	/**
 	 * ...
 	 * @author Gary Paluk
 	 */
-	public class PluginObject 
+	public class PluginObject implements IDisposable
 	{
 		
 		private var _name: String;
+		protected var _isDisposed:Boolean;
 		
 		public function PluginObject() 
 		{
-			
+			_isDisposed = false;
+		}
+		
+		public function dispose():void
+		{
+			_isDisposed = true;
+		}
+		
+		public function get isDisposed():Boolean
+		{
+			return _isDisposed;
 		}
 		
 		public function set name( name: String ): void
