@@ -1,4 +1,4 @@
-plugin-core-fp11
-================
+plugin-core
+===========
 
 Core dependencies for the Plugin.IO library
